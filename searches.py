@@ -1,6 +1,6 @@
 
 
-def binarySearch(data, lst, start, end):
+def recursiveBinarySearch(data, lst, start, end):
     '''
     Binary search algorithm to search data in sorted list of data.
 
@@ -97,15 +97,15 @@ def findSortedPosition(data, lst):
 if __name__ == '__main__':
     l = [1, 3, 5, 7, 9, 12, 34, 45, 100, 101, 102, 234, 456, 1000]
     # uncomment to search in recursion
-    #print(binarySearch(12, l, 0, len(l)))       #True
-    #print(binarySearch(99, l, 0, len(l)))       #False
-    #print(binarySearch(1, l, 0, len(l)))        #True
-    #print(binarySearch(1000, l, 0, len(l)))     #True
-    #print(binarySearch(1001, l, 0, len(l)))     #False
-    #print(binarySearch(0, l, 0, len(l)))        #False
-    #print(binarySearch(45, l, 0, len(l)))       #True
-    #print(binarySearch(7, l, 0, len(l)))        #True
-    #print(binarySearch(9, l, 0, len(l)))        #True
+    #print(recursiveBinarySearch(12, l, 0, len(l)))       #True
+    #print(recursiveBinarySearch(99, l, 0, len(l)))       #False
+    #print(recursiveBinarySearch(1, l, 0, len(l)))        #True
+    #print(recursiveBinarySearch(1000, l, 0, len(l)))     #True
+    #print(recursiveBinarySearch(1001, l, 0, len(l)))     #False
+    #print(recursiveBinarySearch(0, l, 0, len(l)))        #False
+    #print(recursiveBinarySearch(45, l, 0, len(l)))       #True
+    #print(recursiveBinarySearch(7, l, 0, len(l)))        #True
+    #print(recursiveBinarySearch(9, l, 0, len(l)))        #True
 
     # itrative method
     print(binarySearch(12, l))       #True
