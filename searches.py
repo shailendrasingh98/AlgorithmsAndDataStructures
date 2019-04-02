@@ -3,10 +3,11 @@
 def binarySearch(data, lst, start, end):
     '''
     Binary search algorithm to search data in sorted list of data.
+
     :param input data: key/data to be search in List.
-    :param Input lst: collection of data in form of sorted listself.
+    :param input lst: collection of data in form of sorted list.
     :param start, end: starting and ending point of search.
-    :return True: if data found in collectonn else False
+    :return True: if data found in collection else False
     '''
     #if list is empty
     if not lst:
@@ -35,9 +36,10 @@ def binarySearch(data, lst, start, end):
 def binarySearch(data, lst):
     '''
     Binary search algorithm to search data in sorted list of data.
+
     :param input data: key/data to be search in List
-    :param Input lst: collection of data in form of sorted listself.
-    :return True: if data found in collectonn else False
+    :param input lst: collection of data in form of sorted list.
+    :return True: if data found in collection else False
     '''
     # Start with the entire sequence of elements.
     low = 0
@@ -60,6 +62,36 @@ def binarySearch(data, lst):
     # If the sequence cannot be subdivided further, we're done.
     return False
 
+def findSortedPosition(data, lst):
+    '''
+    Modified version of the binary search that returns the index within
+    a sorted sequence indicating where the target should be located.
+
+    :param input data: key/data to be search in List.
+    :param input lst: collection of data in form of sorted list.
+    :return index: position of data in sorted list.
+    '''
+    # Start with the entire sequence of elements.
+    low = 0
+    high = len(lst)-1
+
+    # Repeatedly subdivide the sequence in half until the target is found.
+    while low <= high:
+        # Find the midpoint of the sequence.
+        mid = (low+high)//2
+        # Does the midpoint contain the target?
+        if lst[mid] == data:
+        # Index of the target
+            return mid
+        # Or does the target precede the midpoint?
+        elif data < lst[mid]:
+            high = mid-1
+        else:
+        # Or does it follow the midpoint?
+            low = mid+1
+
+    # Index where the target value should be.
+    return low
 
 
 if __name__ == '__main__':
