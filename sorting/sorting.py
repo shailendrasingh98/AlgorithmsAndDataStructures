@@ -24,6 +24,13 @@ def bubbleSortImproved(lst):
                     swapped = True
     return lst
 
+def bubble_sort(listt):
+    for i in range(len(listt)-1):
+        if listt[i+1] < listt[i]:
+            listt[i], listt[i+1] = listt[i+1], listt[i]
+            bubble_sort(listt)
+    return listt
+
 def selectionSort(lst):
 # Sorts a sequence in ascending order using the selection sort algorithm.
     for i in range(len(lst)):
@@ -53,6 +60,18 @@ def insertionSort(lst):
             lst[j] = next
 
     return lst
+
+def recursiveInsertion(lst, n):
+    if n<=1:
+        return
+    recursiveInsertion(lst, n-1)
+    last = lst[n-1]
+    j = n-1
+    while j>=0 and lst[j-1] > last:
+        lst[j] = lst[j-1]
+        j-=1
+    lst[j-1] = last
+
 
 if __name__ == '__main__':
     l = [1, 0, 123, 34, 54, 98, 45, 23, 2, 4, 9, 40, 54, 87, 78, 5,100]
