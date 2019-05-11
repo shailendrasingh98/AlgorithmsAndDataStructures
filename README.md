@@ -10,5 +10,6 @@ This will have all data structures and algorithms implemented in python.
       b). Bubble sort improved.
       c). Selection sort.
       d). Insertion sort.
+      e). Merge sort.
   7. Searching.
       a). Binary search algorithm.
