@@ -12,8 +12,7 @@ def isuniqueChar(string):
     return True
 
 def isuniqueChar2(string):
-    # you can't form a string of 280 unique characters out of
-    # a 128-character alphabet.
+    # Assuming character set is ASCII (128 characters)
     if len(string)>128:
         return False
 

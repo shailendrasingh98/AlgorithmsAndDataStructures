@@ -1,7 +1,5 @@
 #code
 
-
-
 testCase = int(input())
 for _ in range(testCase):
     n = int(input())

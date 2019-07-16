@@ -7,7 +7,7 @@ import graph
 def build_distance_table(g, source):
     # A dictionary mapping from vertex number to tuple of
     # (distance from source, last vertex on path from source)
-    distance_table = {}
+      = {}
     for i in range(g._numVertices):
         distance_table[i] = (None, None)
 
@@ -19,8 +19,9 @@ def build_distance_table(g, source):
 
     while not q.empty():
         current_vertex = q.get()
-        #The distance of current vertex from source
+        #The distance of current vert    ex from source
         current_distance = distance_table[current_vertex][0]
+
 
         for neighbor in g.get_adjacent_vertices(current_vertex):
             # only update the distance table if no current distance

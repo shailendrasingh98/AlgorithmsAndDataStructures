@@ -92,7 +92,44 @@ class Search(object):
                 low = mid+1
 
         # Index where the target value should be.
-        return low
+        return
+
+    def lowerBound(self,arr, key):
+        '''To find first occurrance'''
+        start = 0
+        end = len(arr)-1
+        ans = -1
+        while start <= end:
+            mid = (end + start)//2
+
+            if arr[mid] ==key:
+                ans = mid
+                end = mid-1
+
+            elif arr[mid] > key:
+                end = mid
+            else:
+                start = mid
+            return ans
+
+    def upperBound(self,arr, key):
+        '''last occurrance'''
+        start = 0
+        end = len(arr)-1
+        ans = -1
+        while start <= end:
+            mid = (end + start)//2
+
+            if arr[mid] ==key:
+                ans = mid
+                start = mid +1
+
+            elif arr[mid] > key:
+                end = mid
+            else:
+                start = mid
+            return ans
+
 
     def jumpSearch(self, arr, x):
         n = len(arr)
@@ -171,6 +208,9 @@ class Search(object):
         print(i//2, i)
         return self.binarySearch2( arr, i / 2,
                          min(i, n), x)
+
+
+
 
 
 if __name__ == '__main__':

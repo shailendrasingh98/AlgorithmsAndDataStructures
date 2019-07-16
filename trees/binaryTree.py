@@ -238,11 +238,11 @@ def preOrderTraversal(root):
         preOrderTraversal(root.left)
         preOrderTraversal(root.right)
 
-def InOrderTraversal(root):
-    if root:
-        InOrderTraversal(root.left)
-        print(root.data)
-        InOrderTraversal(root.right)
+    def InOrderTraversal(root):
+        if root:
+            InOrderTraversal(root.left)
+            print(root.data)
+            InOrderTraversal(root.right)
 
 def PostOrderTraversal(root):
     if root:

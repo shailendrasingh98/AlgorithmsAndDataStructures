@@ -98,7 +98,7 @@ class AdjacencySetGrapgh(Graph):
         if v1 >= self._numVertices or v2 >= self._numVertices or v1 <0 or v2 <0:
             raise ValueError('Vertices %d and %d are out of bounds'%(v1, v2))
 
-        if weight!=1:
+        if weight < 1:
             raise ValueError('Edges can not have weight !=1')
         self._vertex_list[v1].add_edge(v2)
         if not self._directed:
@@ -143,7 +143,7 @@ class GraphUsingDefualtDict(Graph):
         if v1 >= self._numVertices or v2 >= self._numVertices or v1 <0 or v2 <0:
             raise ValueError('Vertices %d and %d are out of bounds'%(v1, v2))
 
-        if weight != 1:
+        if weight <1:
             raise ValueError('Edges can not have weight != 1')
         self.graph[v1].append(v2)
         if not self._directed:
