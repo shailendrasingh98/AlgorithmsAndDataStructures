@@ -35,6 +35,52 @@ class reverseLinkedList(LinkedList):
         prev.next.next = prev
         #make prev node's next link to point to None
         prev.next = None
+# This function should rotate list counter-
+# clockwise by k and return new head (if changed)
+def rotateList(self, head, k):
+    # code here
+    temp = newHead = head
+    q = []
+    l = 1
+    n = k
+    while temp.next:
+        if k >=1:
+            q.append(temp)
+            newHead = temp.next
+        temp = temp.next
+        k = k-1
+        l = l+1
+
+    if n>=l:
+        return head
+
+    for node in q:
+        temp.next = node
+        temp = temp.next
+
+    temp.next = None
+    return newHead
+
+def reverse_kth(self,head k):
+    '''reverse a linked list in group of k'''
+    prev = nxt = None
+    c = k
+    if head is None:
+        return None
+    if head.next is None:
+        return head
+    temp = head
+
+    while temp and c :
+        nxt = temp.next
+        temp.next = prev
+        prev = temp
+        temp = nxt
+        c -=1
+    if nxt is not None:
+        head.next = reverse(nxt, k)
+
+    return prev
 
 
 if __name__ == '__main__':
@@ -55,5 +101,8 @@ if __name__ == '__main__':
     print('linklist.....before recusive reversing ')
     ll.show()
     ll.recursiveReverse()
+    print('linklist.....after recusive reversing')
+    ll.show()
+    ll.
     print('linklist.....after recusive reversing')
     ll.show()

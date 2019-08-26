@@ -143,7 +143,36 @@ def isCompleteBinaryTree(root):
             return False
     return True
 
+def countLeaves(root):
+    # count leaves of Tree
+    if not root:
+        return 0
+    if not root.left and not root.right:
+        return 1
 
+    return countLeaves(root.left) + countLeaves(root.left)
+
+def isIdentical(root1, root2):
+    if root1 and not root2:
+        return False
+    if not root1 and root2:
+        return False
+    if not root1 and not root2:
+        return True
+    if root1.data !=root2.data:
+        return False
+    return isIdentical(root1.left, root2.left) and isIdentical(root1.right, root2.right)
+
+
+def max_height(root):
+    if root is None: return 0
+    if root.left is None and root.right is None: return 1
+    return max(max_height(root.left), max_height(root.right)) +1
+
+def diameter(root):
+    if root is None: return 0
+    mx_height = 1 + max(maxDepthOfTree(root.left), maxDepthOfTree(root.right))
+    return max(max(diameter(root.left),diameter(root.right)), mx_height)
 
 # Driver program to test above function
 root = Node(10)
